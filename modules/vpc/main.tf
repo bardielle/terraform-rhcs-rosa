@@ -101,7 +101,7 @@ resource "aws_route_table_association" "route_net" {
 
 resource "aws_eip" "nat_eip" {
   count = length(local.azs)
-  vpc   = true
+  domain = "vpc"
 
   tags = merge(
     {
